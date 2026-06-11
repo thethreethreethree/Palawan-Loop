@@ -7,9 +7,13 @@ import App from './App.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { BookingProvider } from './context/BookingContext.jsx'
 
+// Strip the trailing slash from Vite's BASE_URL so the router basename matches
+// both "/" (local dev) and "/Palawan-Loop" (GitHub Pages build).
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <AuthProvider>
         <BookingProvider>
           <App />

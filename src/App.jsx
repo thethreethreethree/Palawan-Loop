@@ -4,6 +4,7 @@ import Footer from './components/Footer.jsx'
 import StickyContact from './components/StickyContact.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
+import DemoBanner from './components/DemoBanner.jsx'
 
 import Home from './pages/Home.jsx'
 import Tour from './pages/Tour.jsx'
@@ -20,6 +21,9 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollToTop />
+      {/* Above the navbar so it is the first thing on every route, and so it
+          cannot be scrolled past before the claims below it are read. */}
+      <DemoBanner />
       <Navbar />
       <main className="flex-1">
         <Routes>
